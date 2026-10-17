@@ -225,4 +225,4 @@ AemenersolAssessment/
 
 ## Time spent
 
-~{N} hours — see `TIME_SPENT.md`.
+~5 hours — see `TIME_SPENT.md` for the breakdown and reasoning.
