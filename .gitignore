@@ -12,6 +12,9 @@ obj/
 dotnet-install.ps1
 dotnet-install.sh
 
+# personal interview prep notes (not part of deliverable)
+NOTES.md
+
 # opencode / sandbox
 .opencode/
 node_modules/
