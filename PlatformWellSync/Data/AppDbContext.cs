@@ -14,10 +14,11 @@ public class AppDbContext : DbContext
             return;
 
         var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+        var provider = Environment.GetEnvironmentVariable("DB_PROVIDER") ?? "SqlServer";
 
-        if (!string.IsNullOrEmpty(connectionString) && connectionString.Contains("Data Source="))
+        if (provider.Equals("Sqlite", StringComparison.OrdinalIgnoreCase))
         {
-            optionsBuilder.UseSqlite(connectionString);
+            optionsBuilder.UseSqlite(connectionString ?? "Data Source=platformwell.db");
         }
         else
         {

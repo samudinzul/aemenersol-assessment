@@ -49,14 +49,27 @@ The schema is created from the EF Core migration on first run.
 
 ### Using a different database
 
-Set the `CONNECTION_STRING` environment variable. If it contains `Data Source=`
-(e.g. SQLite) the app uses the SQLite provider and `EnsureCreated` — handy for
-running on non-Windows machines. Otherwise it uses SQL Server and applies the
-migration.
+The provider defaults to **SQL Server**. Override with environment variables:
+
+- `CONNECTION_STRING` — the connection string (defaults to the LocalDB one above).
+- `DB_PROVIDER` — `SqlServer` (default) or `Sqlite`.
+
+When `DB_PROVIDER=Sqlite` the app uses `EnsureCreated`; otherwise it applies the
+EF Core migration.
 
 ```bash
 # SQLite (cross-platform smoke test)
-CONNECTION_STRING="Data Source=platformwell.db" dotnet run
+DB_PROVIDER=Sqlite CONNECTION_STRING="Data Source=platformwell.db" dotnet run
+```
+
+The same solution can be pointed at a full SQL Server (e.g. in Docker) to test the
+real migration and the Part 2 query under SQL Server semantics:
+
+```bash
+docker run -d --name mssql -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Your_password123 \
+  -e MSSQL_PID=Developer -p 1433:1433 mcr.microsoft.com/mssql/server:2022-latest
+
+CONNECTION_STRING="Server=localhost,1433;Database=PlatformWellDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;" dotnet run
 ```
 
 ## Project layout
