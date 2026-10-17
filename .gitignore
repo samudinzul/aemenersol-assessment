@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+*.user
+*.db
+*.db-shm
+*.db-wal
+.vs/
+.idea/
+
+# opencode / sandbox
+.opencode/
+node_modules/
+package.json
+package-lock.json
+
+# local files
+Screenshot*.png
