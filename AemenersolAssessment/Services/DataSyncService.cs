@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using PlatformWellSync.Data;
-using PlatformWellSync.Models;
+using AemenersolAssessment.Data;
+using AemenersolAssessment.Models;
 
-namespace PlatformWellSync.Services;
+namespace AemenersolAssessment.Services;
 
 public class DataSyncService
 {

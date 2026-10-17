@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PlatformWellSync.Data;
+using AemenersolAssessment.Data;
 
 #nullable disable
 
-namespace PlatformWellSync.Migrations
+namespace AemenersolAssessment.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261017122025_InitialCreate")]
-    partial class InitialCreate
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +22,7 @@ namespace PlatformWellSync.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PlatformWellSync.Models.Platform", b =>
+            modelBuilder.Entity("AemenersolAssessment.Models.Platform", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("int");
@@ -52,7 +49,7 @@ namespace PlatformWellSync.Migrations
                     b.ToTable("platform", (string)null);
                 });
 
-            modelBuilder.Entity("PlatformWellSync.Models.Well", b =>
+            modelBuilder.Entity("AemenersolAssessment.Models.Well", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("int");
@@ -84,9 +81,9 @@ namespace PlatformWellSync.Migrations
                     b.ToTable("well", (string)null);
                 });
 
-            modelBuilder.Entity("PlatformWellSync.Models.Well", b =>
+            modelBuilder.Entity("AemenersolAssessment.Models.Well", b =>
                 {
-                    b.HasOne("PlatformWellSync.Models.Platform", "Platform")
+                    b.HasOne("AemenersolAssessment.Models.Platform", "Platform")
                         .WithMany("Wells")
                         .HasForeignKey("PlatformId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -95,7 +92,7 @@ namespace PlatformWellSync.Migrations
                     b.Navigation("Platform");
                 });
 
-            modelBuilder.Entity("PlatformWellSync.Models.Platform", b =>
+            modelBuilder.Entity("AemenersolAssessment.Models.Platform", b =>
                 {
                     b.Navigation("Wells");
                 });

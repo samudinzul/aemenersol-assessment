@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlatformWellSync.Data;
-using PlatformWellSync.Services;
+using AemenersolAssessment.Data;
+using AemenersolAssessment.Services;
 
 var baseUrl = "http://test-demo.aemenersol.com";
 var username = "user@aemenersol.com";

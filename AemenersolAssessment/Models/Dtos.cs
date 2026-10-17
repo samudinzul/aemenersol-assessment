@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace PlatformWellSync.Models;
+namespace AemenersolAssessment.Models;
 
 public class LoginRequest
 {

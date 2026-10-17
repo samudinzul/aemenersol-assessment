@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace PlatformWellSync.Models;
+namespace AemenersolAssessment.Models;
 
 public class Platform
 {

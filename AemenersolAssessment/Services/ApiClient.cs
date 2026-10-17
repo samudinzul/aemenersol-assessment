@@ -1,9 +1,9 @@
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json;
-using PlatformWellSync.Models;
+using AemenersolAssessment.Models;
 
-namespace PlatformWellSync.Services;
+namespace AemenersolAssessment.Services;
 
 public class ApiClient
 {

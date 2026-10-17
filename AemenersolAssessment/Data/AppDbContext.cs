@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using PlatformWellSync.Models;
+using AemenersolAssessment.Models;
 
-namespace PlatformWellSync.Data;
+namespace AemenersolAssessment.Data;
 
 public class AppDbContext : DbContext
 {

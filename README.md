@@ -8,13 +8,13 @@ Core (Code First).
 
 | # | Requirement | Where |
 |---|-------------|-------|
-| 3 | Login to the Web API | `PlatformWellSync/Services/ApiClient.cs` (`LoginAsync`) |
-| 4 | Use returned bearer token to call `GetPlatformWellActual` | `PlatformWellSync/Services/ApiClient.cs`, `PlatformWellSync/Program.cs` |
-| 5 | Store platform data in `Platform` table, well data in `Well` table | `PlatformWellSync/Models/Platform.cs`, `PlatformWellSync/Models/Well.cs` |
-| 6 | Upsert by `id` (update if exists, insert otherwise) | `PlatformWellSync/Services/DataSyncService.cs` |
-| 7 | Don't break on missing/extra keys (tested with `GetPlatformWellDummy`) | `PlatformWellSync/Models/Dtos.cs`, `PlatformWellSync/Services/DataSyncService.cs` |
-| b | Entity Framework Code First | `PlatformWellSync/Data/AppDbContext.cs`, `PlatformWellSync/Migrations/` |
-| Part 2 | SQL query: last updated well per platform | `PlatformWellSync/Queries/LastUpdatedWellPerPlatform.sql` |
+| 3 | Login to the Web API | `AemenersolAssessment/Services/ApiClient.cs` (`LoginAsync`) |
+| 4 | Use returned bearer token to call `GetPlatformWellActual` | `AemenersolAssessment/Services/ApiClient.cs`, `AemenersolAssessment/Program.cs` |
+| 5 | Store platform data in `Platform` table, well data in `Well` table | `AemenersolAssessment/Models/Platform.cs`, `AemenersolAssessment/Models/Well.cs` |
+| 6 | Upsert by `id` (update if exists, insert otherwise) | `AemenersolAssessment/Services/DataSyncService.cs` |
+| 7 | Don't break on missing/extra keys (tested with `GetPlatformWellDummy`) | `AemenersolAssessment/Models/Dtos.cs`, `AemenersolAssessment/Services/DataSyncService.cs` |
+| b | Entity Framework Code First | `AemenersolAssessment/Data/AppDbContext.cs`, `AemenersolAssessment/Migrations/` |
+| Part 2 | SQL query: last updated well per platform | `AemenersolAssessment/Queries/LastUpdatedWellPerPlatform.sql` |
 
 ## How requirement 7 is handled
 
@@ -35,7 +35,7 @@ Core (Code First).
 ## Run
 
 ```bash
-cd PlatformWellSync
+cd AemenersolAssessment
 dotnet run
 ```
 
@@ -75,7 +75,7 @@ CONNECTION_STRING="Server=localhost,1433;Database=PlatformWellDb;User Id=sa;Pass
 ## Project layout
 
 ```
-PlatformWellSync/
+AemenersolAssessment/
 ├── Data/AppDbContext.cs            # EF Core DbContext (Code First)
 ├── Migrations/                     # EF Core migration for SQL Server
 ├── Models/
@@ -92,7 +92,7 @@ PlatformWellSync/
 
 ## Part 2 — SQL query
 
-See [`Queries/LastUpdatedWellPerPlatform.sql`](PlatformWellSync/Queries/LastUpdatedWellPerPlatform.sql).
+See [`Queries/LastUpdatedWellPerPlatform.sql`](AemenersolAssessment/Queries/LastUpdatedWellPerPlatform.sql).
 It joins `Platform` and `Well` and picks, per platform, the well with the greatest
 `UpdatedAt` (ties broken by `Id`), returning the columns shown in the expected result.
 

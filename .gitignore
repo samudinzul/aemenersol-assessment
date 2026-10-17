@@ -8,6 +8,10 @@ obj/
 .vs/
 .idea/
 
+# helper scripts downloaded locally
+dotnet-install.ps1
+dotnet-install.sh
+
 # opencode / sandbox
 .opencode/
 node_modules/
