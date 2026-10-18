@@ -8,6 +8,41 @@ It also answers the Part 2 SQL question.
 
 ---
 
+## Installing the requirements (one-time setup)
+
+Run these in **PowerShell**. Skip what you already have.
+
+### 1. .NET 8 SDK
+
+```powershell
+winget install Microsoft.DotNet.SDK.8
+```
+
+Verify:
+
+```powershell
+dotnet --list-sdks
+```
+
+### 2. SQL Server LocalDB
+
+Download the LocalDB installer and install it silently:
+
+```powershell
+Invoke-WebRequest "https://download.microsoft.com/download/3/8/d/38de7036-2433-4207-8eae-06e247e17b25/SqlLocalDB.msi" -OutFile "$env:TEMP\SqlLocalDB.msi"
+Start-Process msiexec -ArgumentList "/i `"$env:TEMP\SqlLocalDB.msi`" /qn IACCEPTSQLLOCALDBLICENSETERMS=YES" -Wait
+```
+
+Verify:
+
+```powershell
+sqllocaldb info
+```
+
+> After installing either, open a **new** PowerShell window so `PATH` is refreshed.
+
+---
+
 ## Quick start (Windows / PowerShell)
 
 **Needs:** .NET 8 SDK (`dotnet --list-sdks`) and SQL Server LocalDB (`sqllocaldb info` → `MSSQLLocalDB`).
