@@ -180,14 +180,6 @@ Platform5    | 14 | 15         | Well52     | 489.834418| 257.696391 | 2017-10-2
 $env:DB_PROVIDER="Sqlite"; $env:CONNECTION_STRING="Data Source=platformwell.db"; dotnet run
 ```
 
-**Full SQL Server (Docker):**
-
-```bash
-docker run -d --name mssql -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=Your_password123 \
-  -e MSSQL_PID=Developer -p 1433:1433 mcr.microsoft.com/mssql/server:2022-latest
-CONNECTION_STRING="Server=localhost,1433;Database=PlatformWellDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;" dotnet run
-```
-
 ## Project layout
 
 ```
