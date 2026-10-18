@@ -146,6 +146,10 @@ Run it in SSMS, or:
 sqlcmd -S "(localdb)\mssqllocaldb" -d PlatformWellDb -i AemenersolAssessment\Queries\LastUpdatedWellPerPlatform.sql
 ```
 
+> **No sqlcmd?** That's fine — `dotnet run` already executes this same query and prints
+> the result. The `.sql` file is the standalone answer for manual review. If you do want
+> `sqlcmd`: `winget install Microsoft.sqlcmd`.
+
 **Expected result** (matches the assessment):
 
 ```
