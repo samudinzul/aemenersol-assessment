@@ -54,7 +54,9 @@ Run it a second time — still **10 platforms, 15 wells**, no duplicates. That's
 | 5 | Store platform / well data | `Models/Platform.cs`, `Models/Well.cs` |
 | 6 | Upsert by `id` | `Services/DataSyncService.cs` |
 | 7 | Don't break on missing / extra keys | `Models/Dtos.cs`, `Services/DataSyncService.cs` |
-| b | EF Core Code First | `Data/AppDbContext.cs`, `Migrations/` |
+| 7a | Solution in a public git repo | this repository |
+| 7b | EF Core Code First | `Data/AppDbContext.cs`, `Migrations/` |
+| 7c | Hours spent and why | [`TIME_SPENT.md`](TIME_SPENT.md) |
 
 ## Key decisions
 
@@ -165,6 +167,6 @@ AemenersolAssessment/
 | `Unable to locate a Local Database Runtime` | Install SQL Server LocalDB, or use the SQLite command above |
 | Login/sync errors | Check internet access to `test-demo.aemenersol.com` |
 
-## Time spent
+## 7c — Time spent
 
-~5 hours — see [`TIME_SPENT.md`](TIME_SPENT.md) for the breakdown.
+~5 hours — see [`TIME_SPENT.md`](TIME_SPENT.md) for the breakdown and reasoning.
