@@ -8,11 +8,11 @@ It also answers the Part 2 SQL question.
 
 ---
 
-## Quick start
+## Quick start (Windows / PowerShell)
 
 **Needs:** .NET 8 SDK (`dotnet --list-sdks`) and SQL Server LocalDB (`sqllocaldb info` → `MSSQLLocalDB`).
 
-```bash
+```powershell
 cd AemenersolAssessment
 dotnet run
 ```
