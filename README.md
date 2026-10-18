@@ -68,6 +68,10 @@ Platform5    | 14     | 15         | Well52     | 489.834418| 257.696391 | 2017-
 
 Run it a second time — still **10 platforms, 15 wells**, no duplicates. That's the upsert.
 
+Screenshot of an actual run:
+
+![dotnet run output](screenshots/result_dotnet_run.png)
+
 ---
 
 # PART 1 — TECHNICAL ASSESSMENT (.NET APPLICATION)
