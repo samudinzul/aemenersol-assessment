@@ -1,8 +1,6 @@
 # AemenersolAssessment — .NET Technical Assessment
 
-A .NET 8 console application that logs into the test Web API, syncs platform/well
-data into a SQL Server LocalDB database using **EF Core (Code First)**, and answers
-the Part 2 SQL question.
+## PART 1 — TECHNICAL ASSESSMENT (.NET APPLICATION)
 
 ## Prerequisites
 
@@ -15,8 +13,6 @@ the Part 2 SQL question.
 > app also runs on SQLite for a quick cross-platform check.
 
 ---
-
-# PART 1 — TECHNICAL ASSESSMENT (.NET APPLICATION)
 
 Build a .NET Core application that logs into the Web API, uses the returned bearer
 token to call `GetPlatformWellActual`, and upserts the platform/well data into a SQL
